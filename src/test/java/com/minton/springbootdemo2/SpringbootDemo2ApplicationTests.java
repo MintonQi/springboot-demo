@@ -23,9 +23,13 @@ class SpringbootDemo2ApplicationTests {
         user.setUsername("test");
         user.setPassword("123456");
         user.setEmail("xxx@xxx.com");
+        System.out.println("--------------------------\n");
+
 
         User user1 = userMapper.selectByName("zhangsan");
         System.out.println(user1);
-//        System.out.println(userMapper.testUserMapper(user));
+        System.out.println(userMapper.insertUser(user));
+        System.out.println(userMapper.selectByName("test"));
+        System.out.println("--------------------------\n");
     }
 }

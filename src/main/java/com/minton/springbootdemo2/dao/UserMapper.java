@@ -13,10 +13,7 @@ public interface UserMapper {
 
     User selectByName(String username);
 
-//    @Insert({
-//            "insert into user(username, password, email) ",
-//            "values(#{userName}, #{password}, #{email}"
-//    })
+
     int insertUser(User user);
 //
 
