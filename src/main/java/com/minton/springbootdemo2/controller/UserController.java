@@ -1,8 +1,8 @@
 package com.minton.springbootdemo2.controller;
 
-import com.alibaba.fastjson2.JSONObject;
 import com.minton.springbootdemo2.entity.User;
 import com.minton.springbootdemo2.service.UserService;
+import com.minton.springbootdemo2.vo.ResultInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,18 +21,12 @@ public class UserController {
     }
 
     @PostMapping
-    public JSONObject addUser(@RequestBody User user){
-        JSONObject jsonObject = new JSONObject();
+    public ResultInfo addUser(@RequestBody User user){
         if(userService.findUserByName(user.getUsername()) != null){
-            jsonObject.put("code", 4001);
-            jsonObject.put("msg", "username has been used");
-            jsonObject.put("data", "");
+            return ResultInfo.error("用户名已被占用！");
         } else {
             userService.addUser(user);
-            jsonObject.put("code", 2011);
-            jsonObject.put("msg", "User created!");
-            jsonObject.put("data", "");
+            return ResultInfo.success(user);
         }
-        return jsonObject;
     }
 }

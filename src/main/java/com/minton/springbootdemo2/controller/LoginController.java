@@ -22,7 +22,7 @@ public class LoginController {
         this.userService = userService;
     }
 
-    @PostMapping("/loginCheck")
+    @PostMapping("/api/loginCheck")
     public ResultInfo login(@RequestBody User user, HttpServletResponse response) throws IOException {
         return userService.loginCheck(user, response);
     }
