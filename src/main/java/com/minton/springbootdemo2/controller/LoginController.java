@@ -5,13 +5,14 @@ import com.minton.springbootdemo2.service.UserService;
 import com.minton.springbootdemo2.vo.ResultInfo;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 
+@CrossOrigin
 @RestController
 public class LoginController {
 
