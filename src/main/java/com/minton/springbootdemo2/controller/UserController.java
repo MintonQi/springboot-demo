@@ -21,7 +21,7 @@ public class UserController {
     }
 
     @PostMapping
-    public Object addUser(@RequestBody User user){
+    public JSONObject addUser(@RequestBody User user){
         JSONObject jsonObject = new JSONObject();
         if(userService.findUserByName(user.getUsername()) != null){
             jsonObject.put("code", 4001);
