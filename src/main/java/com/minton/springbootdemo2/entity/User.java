@@ -2,7 +2,7 @@ package com.minton.springbootdemo2.entity;
 
 public class User {
 
-    private Integer id;
+    private int id;
 
     private String username;
 
